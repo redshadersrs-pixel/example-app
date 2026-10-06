@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
-// 1. Overzichtspagina van alle planeten (inclusief optionele zoekfilter)
+// 1. Overzichtspagina
 Route::get('/planets', function (Request $request) {
     $planets = [
         ['name' => 'Mars', 'description' => 'Mars is the fourth planet from the Sun.'],
@@ -22,7 +22,7 @@ Route::get('/planets', function (Request $request) {
     return view('planets', ['planeten' => $collection->all()]);
 });
 
-// 2. Detailpagina voor een specifieke planeet (via URL parameter, bijv. /planets/mars)
+// 2. Detailpagina
 Route::get('/planets/{planet}', function ($planet) {
     $planets = [
         'mars' => ['name' => 'Mars', 'description' => 'Mars is the fourth planet from the Sun.'],
